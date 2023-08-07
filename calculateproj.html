@@ -1,0 +1,101 @@
+ <!DOCTYPE html>
+<html>
+    <head> 
+        <title>calculater</title>
+        <style>
+            body{
+        padding: 0;
+        margin: 0;
+        background: #36363c;
+        box-sizing: border-box;
+
+     } 
+.container{
+            margin-top: 50px;
+            margin-left: 190px;
+            height: 205px;
+            width: 138.1px;
+            box-shadow: 10px 10px 2px rgb(0,0,0,.5);
+            background: white;
+            border-radius: 10px;
+
+        }
+    td{
+            height: 30px;
+            width: 30px;
+            text-align: center;
+    }
+    button{
+        background: white;
+        border:none;
+    }
+    table{
+        border-radius: 10px;
+    }
+    .ac{
+        background-color: orange;
+    }
+    .result{
+        background-color: skyblue;
+    }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <table>
+                <tr>
+                    <td colspan="4" id="abc">0</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="ac"><button onclick="pusbtn(this);
+                        " class="ac">AC</button></td>
+                        <td><button onclick="pusbtn(this);">/</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="pusbtn(this);">7</button></td>
+                    <td><button onclick="pusbtn(this);">8</button></td>
+                    <td><button onclick="pusbtn(this);">9</button></td>
+                    <td><button onclick="pusbtn(this);">*</button></td>
+                    </tr>
+                    <tr>
+                    <td><button onclick="pusbtn(this);">4</button></td>
+                    <td><button onclick="pusbtn(this);">5</button></td>
+                    <td><button onclick="pusbtn(this);">6</button></td>
+                    <td><button onclick="pusbtn(this);">-</button></td>
+                    </tr>
+                    <tr>
+                    <td><button onclick="pusbtn(this);">1</button></td>
+                    <td><button onclick="pusbtn(this);">2</button></td>
+                    <td><button onclick="pusbtn(this);">3</button></td>
+                    <td><button onclick="pusbtn(this);">+</button></td>
+                    </tr>
+                <tr>
+                    <td colspan="2"><button onclick="pusbtn(this);">0</button></td>
+                    <td><button onclick="pusbtn(this);">.</button></td>
+                    <td class="result"><button onclick="pusbtn(this);" class="result">=</button></td>
+                </tr>
+            </table>
+        </div>
+        <script>
+                var abc =document.getElementById('abc');
+            function pusbtn (obj) {
+
+                var pushed = obj.innerHTML;
+                if (pushed == '=') {
+                    abc.innerHTML = eval(abc.innerHTML);
+                }
+                else if (pushed == 'AC'){
+                    abc.innerHTML = '0';
+                }
+                else{
+                    if (abc.innerHTML=='0') {
+                        abc.innerHTML= pushed;
+                    }
+                    else{
+                        abc.innerHTML+=pushed;
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
